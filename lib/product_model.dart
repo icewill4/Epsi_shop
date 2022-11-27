@@ -4,8 +4,9 @@ class Product{
   num prix;
   String image;
   String categorie;
+  num rating;
 
-  Product(this.nom, this.description, this.prix, this.image, this.categorie);
+  Product(this.nom, this.description, this.prix, this.image, this.categorie, this.rating);
 
   //{
   // "id":1,
@@ -21,7 +22,8 @@ class Product{
       description = json["description"],
       prix = json["price"] ,
       image = json["image"],
-      categorie = json["category"];
+      categorie = json["category"],
+      rating = json["rating"]["rate"];
 
 
   String displayPriceInEuro() => "$prix €";

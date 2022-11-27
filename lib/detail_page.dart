@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'product_model.dart';
 import 'checkbox.dart' as MyCheckbox;
@@ -40,7 +41,18 @@ class DetailPage extends StatelessWidget {
                       ?.copyWith(color: Colors.black),),
                   ElevatedButton(onPressed: (){}, child: Text("Acheter".toUpperCase()),)
               ],),
-
+            ),
+            Center(
+              child: RatingBarIndicator(
+                rating: product.rating.toDouble(),
+                direction: Axis.horizontal,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 10.0),
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.blue,
+                ),
+              ),
             ),
           ],
         ),

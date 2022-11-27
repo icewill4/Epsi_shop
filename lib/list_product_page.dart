@@ -49,10 +49,10 @@ class ListProductPage extends StatelessWidget {
             if(snapshot.hasData && snapshot.data != null){
               List<dynamic> lsJsonProducts = jsonDecode(snapshot.data!.body);
               //var lsJsonProducts2 = jsonDecode(snapshot.data!.body) as List<Map<String,dynamic>>;
-              List<Product> _lsProducts = lsJsonProducts.map((element)
+              List<Product> lsProducts = lsJsonProducts.map((element)
                 => Product.fromJson(element)
               ).toList();
-              return ListViewProducts(listProducts: _lsProducts,);
+              return ListViewProducts(listProducts: lsProducts,);
             }else if (snapshot.hasError){
               return Text("Impossible de récupérer des infos :(");
             }else if(snapshot.connectionState == ConnectionState.waiting){

@@ -29,7 +29,7 @@ class ListViewProducts extends StatelessWidget {
             child: Image.network(_lsProducts[index].image,
               width: 80,height: 80,),
           ),
-          trailing: TextButton(child: const Text("Add"),onPressed: (){
+          trailing: TextButton(child: const Text("Ajouter"),onPressed: () {
             context.read<CartModel>().add(_lsProducts[index]);
           },),
         )

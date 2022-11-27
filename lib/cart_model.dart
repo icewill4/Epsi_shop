@@ -15,4 +15,10 @@ class CartModel extends ChangeNotifier{
   }
   getProducts() => _lsProducts;
   getCount() => _lsProducts.length;
-}
+
+  double get total {
+    return _lsProducts.fold(0.0, (double currentTotal, Product nextProduct){
+      return currentTotal + nextProduct.prix;
+    });
+    }
+  }
